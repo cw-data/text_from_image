@@ -19,7 +19,25 @@ import time
 
 reader = easyocr.Reader(['ch_sim','en']) # only have to run once to download the text dictionary
 
-def process_images(data_folder:str, output_filename:str='') -> str:
+def process_images(data_folder:str, output_filename:str='') -> list[list[str]]:
+    """Extract the text from each .png file in a folder of .png images.
+
+    Args:
+        data_folder (str): relative or absolute filepath to a folder of .png images from which text should be parsed
+        output_filename (str, optional): relative or absolute filepath for output file of text parsed from images.
+            Defaults to ''. If blank, will not write file. If not blank, must end in '.txt'.
+
+    Returns:
+        list: A list of lists.
+            The outer list contains one element per .png file located in `data_folder`.
+            Each inner list contains one element per chunk of text present in a .png file from `data_folder`.
+
+    Example usage:
+        import src.img as img
+        input_folder=r'data/ch3'
+        output_file=r'output/test.txt'
+        result = img.process_images(data_folder=input_folder, output_filename=output_file)
+    """
     
     # business logic
     # input folder must be instance of folder and cannot end in '/' or '\'
