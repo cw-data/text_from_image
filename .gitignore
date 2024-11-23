@@ -1,0 +1,10 @@
+data/
+.vscode
+Include
+Lib
+output/
+Scripts
+*.cfg
+sandbox.py
+todo.txt
+text_from_image/
