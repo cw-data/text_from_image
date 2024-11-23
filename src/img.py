@@ -85,6 +85,8 @@ def _extract_text_from_files(files:list):
 
 def _write_text_to_file(output_filename:str, input_list:list) -> None:
 
+    print("Writing text to file...")
+    
     with open(output_filename, "w", encoding="utf-8") as file:
         for line in input_list:
             if isinstance(line, list):
