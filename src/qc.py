@@ -6,7 +6,7 @@ QC tools for checking that a text file is ok
 fname = r'output\hp\ch3.txt'
 # check lines for known-wrong characters
 unacceptables = [
-    ''
+    '《'
 ]
 
 # check that no line is > 19 chars (this is the max line-length for phone app)
